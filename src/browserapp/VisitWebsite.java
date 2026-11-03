@@ -1,13 +1,52 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package browserapp;
 
-/**
- *
- * @author hansel
- */
-public class VisitWebsite {
+import java.awt.Desktop;
+import java.net.URI;
+
+public class VisitWebsite extends BrowserAction{
     
-}
+     private String url;
+
+    // Constructor
+    public VisitWebsite(String url) {
+        this.url = url;
+    }
+
+    VisitWebsite(String url) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    // Get website URL
+    public String getUrl() {
+        return url;
+    }
+
+    // Visit website
+    @Override
+    public boolean execute() {
+
+        try {
+
+            if (!url.startsWith("http://")
+                && !url.startsWith("https://")) {
+
+                url = "https://" + url;
+            }
+
+            if (!Desktop.isDesktopSupported()) {
+                return false;
+            }
+
+            Desktop.getDesktop().browse(
+                new URI(url)
+            );
+
+            return true;
+
+        } catch (Exception e) {
+
+            return false;
+        }
+    }
+    
+} 
