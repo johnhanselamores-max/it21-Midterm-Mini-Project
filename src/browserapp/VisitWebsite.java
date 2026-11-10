@@ -12,9 +12,6 @@ public class VisitWebsite extends BrowserAction{
         this.url = url;
     }
 
-    VisitWebsite(String url) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
     // Get website URL
     public String getUrl() {

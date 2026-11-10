@@ -1,3 +1,4 @@
+
 package browserapp;
 
 import java.awt.Desktop;
@@ -10,9 +11,6 @@ public class GoBack extends BrowserAction {
         this.previousUrl = previousUrl;
     }
 
-    GoBack(String previousPage) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
     @Override
     public boolean execute() {
